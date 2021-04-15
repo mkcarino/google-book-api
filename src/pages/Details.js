@@ -8,7 +8,6 @@ import styled from "styled-components";
 const Details = () => {
   const { book } = useParams();
   const [bookDetails, setBooks] = useState([]);
-  console.log(book);
   useEffect(() => {
     Axios.get(`https://www.googleapis.com/books/v1/volumes/${book}`)
       .then((response) => {
@@ -16,7 +15,6 @@ const Details = () => {
       })
       .catch((err) => console.error(err));
   }, [book]);
-  console.log(bookDetails.id);
   if (!bookDetails.volumeInfo) {
     //Empty data
     return (

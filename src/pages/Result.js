@@ -12,15 +12,12 @@ const Result = () => {
   const { pageNumber} = useParams();
   const [books, setBooks] = useState([]);
  
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${text}&startIndex=${pageNumber}`;
-  console.log(url);
   useEffect(() => {
     Axios.get(`https://www.googleapis.com/books/v1/volumes?q=${text}&startIndex=${pageNumber}`)
       .then((response) => {
         response.data.items
           ? setBooks(response.data.items)
           : setBooks(undefined);
-          console.log(response);
       })
       .catch((err) => {
         //FlagError is used for the last return

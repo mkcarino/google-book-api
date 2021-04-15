@@ -4,7 +4,6 @@ import styled from "styled-components";
 import bookCover from "../assets/book.png";
 
 function Book({ book, img, title, authors }) {
-  console.log(img);
   return (
     <Link to={`/pages/Details/${book}`} style={{ textDecoration: "none" }}>
       <StyledBook>
@@ -29,6 +28,7 @@ function Book({ book, img, title, authors }) {
 
 /* Start Styling */
 const StyledBook = styled.div`
+  
   display: flex;
   color: black;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
