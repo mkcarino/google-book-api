@@ -5,7 +5,7 @@ import bookCover from "../assets/book.png";
 
 function Book({ book, img, title, authors }) {
   return (
-    <Link to={`/pages/Details/${book}`} style={{ textDecoration: "none" }}>
+    <Link to={`/book/${book}`} style={{ textDecoration: "none" }}>
       <StyledBook>
         <LeftCol>
           <BookImg

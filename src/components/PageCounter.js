@@ -10,8 +10,8 @@ const PageCounter = ({ pageNumber, text }) => {
         <Link
           to={
             pageNumber === 0
-              ? `/pages/Result/${text}/${pageNumber}`
-              : `/pages/Result/${text}/0`
+              ? `/search/${text}/${pageNumber}`
+              : `/search/${text}/0`
           }
         >
         1
@@ -21,8 +21,8 @@ const PageCounter = ({ pageNumber, text }) => {
         <Link
           to={
             pageNumber === 20
-              ? `/pages/Result/${text}/${pageNumber}`
-              : `/pages/Result/${text}/20`
+              ? `/search/${text}/${pageNumber}`
+              : `/search/${text}/20`
           }
         >
         2
@@ -32,8 +32,8 @@ const PageCounter = ({ pageNumber, text }) => {
         <Link
           to={
             pageNumber === 30
-              ? `/pages/Result/${text}/${pageNumber}`
-              : `/pages/Result/${text}/30`
+              ? `/search/${text}/${pageNumber}`
+              : `/search/${text}/30`
           }
         >
         3

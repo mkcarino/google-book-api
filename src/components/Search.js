@@ -22,7 +22,7 @@ const Search = () => {
           onChange={inputTextHandler}
           placeholder="Search a Book, Author, Publisher"
         />
-        <Link to={text !== "" ? `/pages/Result/${text}/0` : window.location}>
+        <Link to={text !== "" ? `/search/${text}/0` : window.location}>
           <Button toggle={toggle} type="submit" value="Search Book">
             Search
           </Button>
@@ -37,6 +37,7 @@ const StyledSearch = styled.div`
   position: flex;
 `;
 const Input = styled.input`
+  background: #fff;
   outline: 0;
   padding: 0 1.6rem;
   border-radius: 0.7rem;
@@ -56,6 +57,7 @@ const Input = styled.input`
       border-radius: 0.7rem 0 0 0.7rem;
       width: calc(100% - 4rem);
     }
+    
   }
 `;
 const Form = styled.form`
@@ -63,6 +65,9 @@ const Form = styled.form`
   width: 30rem;
   @media (max-width: 480px) {
     width: 20rem;
+  }
+  @media (max-width: 7680px) {
+    width: 23rem;
   }
 `;
 const Button = styled.button`
