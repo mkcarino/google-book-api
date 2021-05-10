@@ -76,15 +76,16 @@ const RightCol = styled.div`
   display: flex;
   flex: 2;
   flex-direction: column;
-  padding-top: 2rem;
+  padding-top: 1rem;
   @media (max-width: 480px) {
     flex: 1;
   }
-  h3 {
+  h3 {font-size:1.5rem;
     margin-bottom: 0.75rem;
   }
   p {
     color: gray;
+    margin-bottom: 0rem;
   }
 `;
 /* End Styling */

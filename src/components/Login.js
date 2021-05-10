@@ -16,7 +16,6 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      console.log("Login effettuato");
     } catch (errorr) {
       console.log(errorr);
     }
@@ -37,7 +36,6 @@ const Login = () => {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-
             <Button disabled={loading} className="w-100 mt-3" type="submit">
               Login
             </Button>

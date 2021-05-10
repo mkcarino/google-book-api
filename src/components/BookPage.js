@@ -15,11 +15,11 @@ const BookPage = ({ title, img, authors, desc, isbn, pub }) => {
         <BookImg src={img} alt="sio" />
       </LeftCol>
       <RightCol>
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         {authors !== "Author not available" ? (
-          authors.map((author) => <h2 key={author}>{author}</h2>)
+          authors.map((author) => <h3 key={author}>{author}</h3>)
         ) : (
-          <h2>{authors}</h2>
+          <h3>{authors}</h3>
         )}
         <span>Publisher: {pub}</span>
         <span>ISBN:{isbn}</span>
@@ -74,7 +74,7 @@ const GoBack = styled.button`
   background-color: #57bd84;
   outline: 0;
   border: 0;
-  font-size: 1.15rem;
+  font-size: 1rem;
   width: 8rem;
   height: 3rem;
   border-radius: 0.7rem;

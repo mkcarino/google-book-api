@@ -18,6 +18,7 @@ const SignUp = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      
     } catch (errorr) {
       console.log(errorr);
     }
@@ -46,6 +47,7 @@ const SignUp = () => {
             <Button disabled={loading} className="w-100 mt-3" type="submit">
               Sing Up
             </Button>
+           
           </Form>
         </Card.Body>
       </Card>
