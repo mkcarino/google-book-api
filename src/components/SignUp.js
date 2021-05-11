@@ -44,7 +44,7 @@ const SignUp = () => {
               <Form.Control type="password" ref={passwordConfRef} required />
             </Form.Group>
             <Button disabled={loading} className="w-100 mt-3" type="submit">
-              Sing Up
+              Sign Up
             </Button>
           </Form>
         </Card.Body>
