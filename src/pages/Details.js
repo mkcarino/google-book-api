@@ -25,40 +25,42 @@ const Details = () => {
   } else {
     //Succesful request
     return (
-      <StyledDetails>
+      <>
         <Nav />
-        <BookPage
-          key={book}
-          title={bookDetails.volumeInfo.title}
-          img={
-            bookDetails.volumeInfo.imageLinks
-              ? bookDetails.volumeInfo.imageLinks.medium ||
-                bookDetails.volumeInfo.imageLinks.thumbnail
-              : "Image not aviable"
-          }
-          authors={
-            bookDetails.volumeInfo.authors
-              ? bookDetails.volumeInfo.authors
-              : "Author not available"
-          }
-          desc={
-            bookDetails.volumeInfo.description
-              ? bookDetails.volumeInfo.description
-              : "No Description available"
-          }
-          isbn={
-            bookDetails.volumeInfo.industryIdentifiers
-              ? bookDetails.volumeInfo.industryIdentifiers[0].identifier ||
-                bookDetails.volumeInfo.industryIdentifiers[1].identifier
-              : "No ISBN available"
-          }
-          pub={
-            bookDetails.volumeInfo.publisher
-              ? bookDetails.volumeInfo.publisher
-              : "No publisher available"
-          }
-        />
-      </StyledDetails>
+        <StyledDetails>
+          <BookPage
+            key={book}
+            title={bookDetails.volumeInfo.title}
+            img={
+              bookDetails.volumeInfo.imageLinks
+                ? bookDetails.volumeInfo.imageLinks.medium ||
+                  bookDetails.volumeInfo.imageLinks.thumbnail
+                : "Image not aviable"
+            }
+            authors={
+              bookDetails.volumeInfo.authors
+                ? bookDetails.volumeInfo.authors
+                : "Author not available"
+            }
+            desc={
+              bookDetails.volumeInfo.description
+                ? bookDetails.volumeInfo.description
+                : "No Description available"
+            }
+            isbn={
+              bookDetails.volumeInfo.industryIdentifiers
+                ? bookDetails.volumeInfo.industryIdentifiers[0].identifier ||
+                  bookDetails.volumeInfo.industryIdentifiers[1].identifier
+                : "No ISBN available"
+            }
+            pub={
+              bookDetails.volumeInfo.publisher
+                ? bookDetails.volumeInfo.publisher
+                : "No publisher available"
+            }
+          />
+        </StyledDetails>
+      </>
     );
   }
 };

@@ -11,7 +11,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   async function handleSubmit(e) {
     e.preventDefault();
-    
+
     try {
       setError("");
       setLoading(true);
@@ -29,7 +29,7 @@ const Login = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" className=" mt-2">
-              <Form.Label>EMAIL</Form.Label>
+              <Form.Label>Email address</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password" className=" mt-2">
@@ -42,7 +42,6 @@ const Login = () => {
           </Form>
         </Card.Body>
       </Card>
-
     </>
   );
 };

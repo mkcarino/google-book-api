@@ -2,14 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 import Search from "../components/Search";
+import Nav from "../components/Nav";
 import googleLogo from "../assets/logo.png";
 
 const Home = () => {
   return (
-    <StyledHome>
-      <Logo src={googleLogo} />
-      <Search />
-    </StyledHome>
+    <>
+      <Nav home={true} />
+      <StyledHome>
+        <Logo src={googleLogo} />
+        <Search />
+      </StyledHome>
+    </>
   );
 };
 
@@ -19,10 +23,10 @@ const StyledHome = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 100vh;
+  min-height: 60vh;
   @media (max-width: 768px) {
     flex-direction: column;
-    height: 80vh;
+    height: 50vh;
   }
 `;
 const Logo = styled.img`

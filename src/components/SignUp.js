@@ -18,7 +18,6 @@ const SignUp = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      
     } catch (errorr) {
       console.log(errorr);
     }
@@ -33,10 +32,10 @@ const SignUp = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" className=" mt-2">
-              <Form.Label>EMAIL</Form.Label>
+              <Form.Label>Email address</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
-            <Form.Group id="password"className=" mt-2">
+            <Form.Group id="password" className=" mt-2">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
@@ -47,7 +46,6 @@ const SignUp = () => {
             <Button disabled={loading} className="w-100 mt-3" type="submit">
               Sing Up
             </Button>
-           
           </Form>
         </Card.Body>
       </Card>
