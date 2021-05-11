@@ -38,6 +38,9 @@ const StyledNav = styled.div`
     font-size: 1rem;
     justify-content: center;
   }
+  @media (max-width: 480px) {
+    padding: 1rem 1rem 0 1rem;
+  }
 `;
 const Logo = styled.img`
   width: 180px;
@@ -45,6 +48,7 @@ const Logo = styled.img`
   margin-right: 1rem;
   @media (max-width: 768px) {
     margin-bottom: 1rem;
+    margin-right: 0rem;
   }
 `;
 

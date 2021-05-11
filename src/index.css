@@ -12,6 +12,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightgray !important;
+  background-color: darkgrey!important;
   font-size: 100%;
 }

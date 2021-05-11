@@ -28,7 +28,6 @@ function Book({ book, img, title, authors }) {
 
 /* Start Styling */
 const StyledBook = styled.div`
-  
   display: flex;
   color: black;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
@@ -39,6 +38,9 @@ const StyledBook = styled.div`
   height: 170px;
   flex-direction: row;
   background-color: white;
+  border-radius:  20px 50px 20px 20px;
+
+  border-top: 2px solid  #57bd84;
   img {
     top: -80px;
     width: 150px;
@@ -47,7 +49,7 @@ const StyledBook = styled.div`
   @media (max-width: 480px) {
     margin-top: 1rem;
     flex-direction: column;
-    width: 400px;
+    width: 390px;
     height: 380px;
     img {
       top: 0;

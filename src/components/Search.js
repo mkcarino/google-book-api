@@ -63,11 +63,8 @@ const Input = styled.input`
 const Form = styled.form`
   position: relative;
   width: 30rem;
-  @media (max-width: 480px) {
-    width: 20rem;
-  }
-  @media (max-width: 7680px) {
-    width: 23rem;
+  @media (max-width: 768px) {
+    width:90%;
   }
 `;
 const Button = styled.button`
