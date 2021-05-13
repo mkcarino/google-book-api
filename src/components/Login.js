@@ -17,7 +17,8 @@ const Login = () => {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
     } catch (errorr) {
-      console.log(errorr);
+      console.log(errorr.message);
+      setError(errorr.message);
     }
     setLoading(false);
   }

@@ -20,6 +20,7 @@ const SignUp = () => {
       await signup(emailRef.current.value, passwordRef.current.value);
     } catch (errorr) {
       console.log(errorr);
+      setError(errorr.message);
     }
     setLoading(false);
   }
