@@ -11,25 +11,29 @@ const Result = () => {
   const { text } = useParams();
   const { pageNumber } = useParams();
   const [books, setBooks] = useState([]);
+  const [notFound, setNotFound] = useState(false);
+  const [errorQuery, setErrorQuery] = useState(false);
 
   useEffect(() => {
-    Axios.get(
-      `https://www.googleapis.com/books/v1/volumes?q=${text}&startIndex=${pageNumber}`
-    )
+    const query = `https://www.googleapis.com/books/v1/volumes?q=${text}&startIndex=${pageNumber}`;
+    console.log(query);
+    Axios.get(query)
       .then((response) => {
-        response.data.items
-          ? setBooks(response.data.items)
-          : setBooks(undefined);
+        console.error(response);
+        if (response.data.totalItems === 0) {
+          setNotFound(true);
+        } else {
+          setBooks(response.data.items);
+          setNotFound(false);
+        }
       })
       .catch((err) => {
-        //FlagError is used for the last return
-        const flagError = [2];
-        setBooks(flagError);
         console.error(err);
+        setErrorQuery(true);
       });
   }, [text, pageNumber]);
 
-  if (books.length === 0) {
+  if (notFound) {
     //If the search is empty
     return (
       <>
@@ -41,19 +45,9 @@ const Result = () => {
         </StyledResult>
       </>
     );
-  } else if (books[0] !== 2) {
-    //Succesful request
-    return (
-      <>
-        <Nav />
-        <StyledResult>
-          <Subtitle>You searched: {text}</Subtitle>
-          <Books books={books} text={text} />
-          <PageCounter pageNumber={pageNumber} text={text} />
-        </StyledResult>
-      </>
-    );
-  } else {
+  }
+
+  if (errorQuery) {
     //Error request
     return (
       <>
@@ -64,6 +58,17 @@ const Result = () => {
       </>
     );
   }
+  //Succesful request
+  return (
+    <>
+      <Nav />
+      <StyledResult>
+        <Subtitle>You searched: {text}</Subtitle>
+        <Books books={books} text={text} />
+        <PageCounter pageNumber={pageNumber} text={text} />
+      </StyledResult>
+    </>
+  );
 };
 
 /* Start Styling */
